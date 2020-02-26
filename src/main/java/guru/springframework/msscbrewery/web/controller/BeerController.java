@@ -50,7 +50,7 @@ public class BeerController {
     }
 
     @DeleteMapping({"/{beerId}"})
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.NO_CONTENT) //willl return empty body
     public void deleteBeer(@PathVariable("beerId") UUID beerId){
         beerService.deleteById(beerId);
     }

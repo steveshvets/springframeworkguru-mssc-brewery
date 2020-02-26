@@ -29,7 +29,7 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.getCustomerById(customerId), HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping //new
     public ResponseEntity handlePost(CustomerDto customerDto){
         CustomerDto savedDto = customerService.saveNewCustomer(customerDto);
 
@@ -39,7 +39,7 @@ public class CustomerController {
         return new ResponseEntity(httpHeaders, HttpStatus.CREATED);
     }
 
-    @PutMapping("/{customerId}")
+    @PutMapping("/{customerId}") //update
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void handleUpdate(@PathVariable("customerId") UUID customerId, CustomerDto customerDto){
         customerService.updateCustomer(customerId, customerDto);
